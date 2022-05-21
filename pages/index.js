@@ -1,4 +1,5 @@
 import styles from '../styles/Home.module.css'
+import helloMsg from "./api/hello"
 
 export default function Home({ msg }) {
   return (
@@ -9,7 +10,7 @@ export default function Home({ msg }) {
 }
 
 export async function getStaticProps() {
-  const responseJson = await fetch("http://localhost:3000/api/hello")
+  const responseJson = await helloMsg()
   const response = await responseJson.json()
 
   return {
